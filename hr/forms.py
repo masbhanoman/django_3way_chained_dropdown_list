@@ -31,3 +31,4 @@ class PersonForm(forms.ModelForm):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
             self.fields['vanue'].queryset = self.instance.country.city.vanue_set.order_by('name')
+            #self.fields['vanue'].queryset = self.instance.city.vanue_set.order_by('name')
